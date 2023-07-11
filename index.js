@@ -13,6 +13,7 @@ app.use(cors());
 
 app.use(require('./routes/users.route'));
 app.use(require('./routes/comments.route'))
+app.use(require('./routes/publications.route'))
 
 mongoose
   .connect(process.env.MONGO_SERVER)

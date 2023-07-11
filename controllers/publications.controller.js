@@ -28,7 +28,6 @@ module.exports.publicationController={
                 header: req.body.header,
                 geoTag: req.body.geoTag,
                 image: req.file.path,
-                user: req.user.id,
                 desc: req.body.desc
             })
             res.json(publications)
