@@ -23,12 +23,14 @@ module.exports.publicationController={
     },
 
     postPublications: async (req, res)=>{
+        console.log("FILE", req);
         try {
             const publications = await Publication.create({
                 header: req.body.header,
                 geoTag: req.body.geoTag,
-                image: req.file.path,
-                desc: req.body.desc
+                image: req.files.map(item => item.path),
+                desc: req.body.desc,
+                price: req.body.price
             })
             res.json(publications)
             
@@ -45,7 +47,8 @@ module.exports.publicationController={
                 req.params.id,
                 {header: req.body.header,
                 desc: req.body.desc,
-                geoTag: req.body.geoTag},
+                geoTag: req.body.geoTag,
+                price: req.body.price},
                 {new: true})
                 res.json(publication)
 
