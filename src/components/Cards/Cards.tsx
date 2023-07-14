@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCard, fetchCards } from "../features/cards.slice";
+import {  fetchCards } from "../features/cards.slice";
 import Styles from "./Cards.module.css";
 import Placemark from '../icons/Placemark.jsx'
 

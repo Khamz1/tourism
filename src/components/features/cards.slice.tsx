@@ -4,12 +4,14 @@ const initialState = {
   loading: false,
   error: null,
 };
-
+console.log(initialState.cards,"SLICE")
 export const fetchCards = createAsyncThunk(
   "fetch/cards",
   async (data, thunkAPI) => {
     try {
       const res = await fetch("http://localhost:4000/publications");
+      console.log(res);
+      
       const cards = await res.json();
       if(cards.error) {
         return thunkAPI.rejectWithValue(cards.error)
