@@ -78,6 +78,7 @@ function Card() {
           onChange={handleSetPrice}
         />
         <button type="submit">Send </button>
+      
       </form>
     </div>
   );
